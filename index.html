@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Обучающий тренажёр: Постановка задач по SMART</title>
+<title>Образовательный центр Россильбер</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -76,6 +76,7 @@
   .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.2; margin-bottom: 16px; }
   .hero h1 span { color: var(--gold); }
   .hero p { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
+  .hero.hero-start { padding: 20px 0 34px; }
 
   /* ─── CARD ─── */
   .card {
@@ -357,6 +358,30 @@
   .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 16px; }
   .modal p { color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
 
+
+  /* ─── MODULES ─── */
+  .module-list {
+    max-width: 740px;
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+  }
+  .module-item {
+    background: rgba(26,46,69,0.72);
+    border: 1px solid rgba(201,168,76,0.24);
+    border-radius: 8px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .module-meta { color: var(--muted); font-size: 0.86rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .module-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 8px; }
+  .module-desc { color: #C5D5E8; font-size: 0.92rem; line-height: 1.6; }
+  .module-actions { min-width: 220px; text-align: right; }
+  .module-soon { color: var(--muted); font-size: 0.83rem; }
+
   /* ─── TAG ─── */
   .tag { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 2px; }
   .tag-blue { background: rgba(58,123,213,0.2); color: #6EB5FF; border: 1px solid rgba(58,123,213,0.3); }
@@ -372,8 +397,7 @@
 <div class="top-bar">
   <div class="container">
     <div>
-      <div class="logo-text">SMART-Тренажёр</div>
-      <div class="logo-sub">Корпоративное обучение</div>
+      <div class="logo-text">Образовательный центр Россильбер</div>
     </div>
     <div class="progress-bar-wrap">
       <div class="progress-label">Прогресс обучения</div>
@@ -383,8 +407,42 @@
   </div>
 </div>
 
-<!-- ════════════════ SECTION 0: РЕГИСТРАЦИЯ ════════════════ -->
+<!-- ════════════════ SECTION 0: СТАРТОВАЯ ════════════════ -->
 <section class="section active" id="sec0">
+  <div class="container">
+    <div class="hero hero-start">
+      <h1><span>Образовательный центр</span><br>Россильбер</h1>
+      <p>Единая стартовая страница для всех программ обучения компании. Выберите модуль и начните прохождение.</p>
+    </div>
+
+    <div class="module-list">
+      <div class="module-item">
+        <div>
+          <div class="module-meta">Модуль 01 · Доступен</div>
+          <div class="module-title">Постановка задач по методологии SMART</div>
+          <div class="module-desc">Текущий учебный модуль: теория SMART, разбор критериев, производственные кейсы и итоговое тестирование.</div>
+        </div>
+        <div class="module-actions">
+          <button class="btn btn-gold" onclick="openSmartModule()">Открыть модуль →</button>
+        </div>
+      </div>
+
+      <div class="module-item" style="opacity:0.78;">
+        <div>
+          <div class="module-meta">Следующие модули</div>
+          <div class="module-title" style="color:var(--gold-light);">Разделы скоро будут добавлены</div>
+          <div class="module-desc">Структура центра уже готова. Новые блоки обучения будут подключены на этой странице.</div>
+        </div>
+        <div class="module-actions">
+          <div class="module-soon">Статус: в подготовке</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION 1: РЕГИСТРАЦИЯ ════════════════ -->
+<section class="section" id="sec1">
   <div class="container">
     <div class="hero">
       <div class="hero-badge">Корпоративный учебный модуль</div>
@@ -437,8 +495,8 @@
   </div>
 </section>
 
-<!-- ════════════════ SECTION 1: ВВЕДЕНИЕ ════════════════ -->
-<section class="section" id="sec1">
+<!-- ════════════════ SECTION 2: ВВЕДЕНИЕ ════════════════ -->
+<section class="section" id="sec2">
   <div class="container">
     <div class="sec-head">
       <div class="num">01</div>
@@ -554,13 +612,13 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-gold" onclick="goTo(2)">Далее: критерий S → </button>
+      <button class="btn btn-gold" onclick="goTo(3)">Далее: критерий S → </button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 2: S — SPECIFIC ════════════════ -->
-<section class="section" id="sec2">
+<!-- ════════════════ SECTION 3: S — SPECIFIC ════════════════ -->
+<section class="section" id="sec3">
   <div class="container">
     <div class="sec-head">
       <div class="num">02</div>
@@ -654,14 +712,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(1)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(3)">Далее: критерий M →</button>
+      <button class="btn btn-outline" onclick="goTo(2)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(4)">Далее: критерий M →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 3: M — MEASURABLE ════════════════ -->
-<section class="section" id="sec3">
+<!-- ════════════════ SECTION 4: M — MEASURABLE ════════════════ -->
+<section class="section" id="sec4">
   <div class="container">
     <div class="sec-head">
       <div class="num">03</div>
@@ -762,14 +820,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(2)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(4)">Далее: критерий A →</button>
+      <button class="btn btn-outline" onclick="goTo(3)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(5)">Далее: критерий A →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 4: A — ACHIEVABLE ════════════════ -->
-<section class="section" id="sec4">
+<!-- ════════════════ SECTION 5: A — ACHIEVABLE ════════════════ -->
+<section class="section" id="sec5">
   <div class="container">
     <div class="sec-head">
       <div class="num">04</div>
@@ -874,14 +932,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(3)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(5)">Далее: критерий R →</button>
+      <button class="btn btn-outline" onclick="goTo(4)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(6)">Далее: критерий R →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 5: R — RELEVANT ════════════════ -->
-<section class="section" id="sec5">
+<!-- ════════════════ SECTION 6: R — RELEVANT ════════════════ -->
+<section class="section" id="sec6">
   <div class="container">
     <div class="sec-head">
       <div class="num">05</div>
@@ -964,14 +1022,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(4)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(6)">Далее: критерий T →</button>
+      <button class="btn btn-outline" onclick="goTo(5)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(7)">Далее: критерий T →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 6: T — TIME-BOUND ════════════════ -->
-<section class="section" id="sec6">
+<!-- ════════════════ SECTION 7: T — TIME-BOUND ════════════════ -->
+<section class="section" id="sec7">
   <div class="container">
     <div class="sec-head">
       <div class="num">06</div>
@@ -1075,14 +1133,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(5)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(7)">Далее: ошибки и практика →</button>
+      <button class="btn btn-outline" onclick="goTo(6)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(8)">Далее: ошибки и практика →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 7: ОШИБКИ + ПРАКТИКА ════════════════ -->
-<section class="section" id="sec7">
+<!-- ════════════════ SECTION 8: ОШИБКИ + ПРАКТИКА ════════════════ -->
+<section class="section" id="sec8">
   <div class="container">
     <div class="sec-head">
       <div class="num">07</div>
@@ -1246,14 +1304,14 @@
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-outline" onclick="goTo(6)">← Назад</button>
-      <button class="btn btn-gold" onclick="goTo(8)">Перейти к тестированию →</button>
+      <button class="btn btn-outline" onclick="goTo(7)">← Назад</button>
+      <button class="btn btn-gold" onclick="goTo(9)">Перейти к тестированию →</button>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ SECTION 8: ТЕСТ ════════════════ -->
-<section class="section" id="sec8">
+<!-- ════════════════ SECTION 9: ТЕСТ ════════════════ -->
+<section class="section" id="sec9">
   <div class="container">
     <div class="sec-head">
       <div class="num">08</div>
@@ -1289,8 +1347,8 @@
   </div>
 </section>
 
-<!-- ════════════════ SECTION 9: РЕЗУЛЬТАТЫ ════════════════ -->
-<section class="section" id="sec9">
+<!-- ════════════════ SECTION 10: РЕЗУЛЬТАТЫ ════════════════ -->
+<section class="section" id="sec10">
   <div class="container" id="resultsContainer"></div>
 </section>
 
@@ -1312,7 +1370,7 @@ let userName = '';
 let userPost = '';
 let currentSection = 0;
 let pendingNav = null;
-const totalSections = 10; // 0..9
+const totalSections = 11; // 0..10
 
 const questions = [
   {
@@ -1452,8 +1510,12 @@ let answered = new Array(10).fill(false);
 let score = 0;
 
 // ═══════════════════ NAVIGATION ═══════════════════
+function openSmartModule() {
+  goTo(1);
+}
+
 function goTo(n) {
-  if (currentSection === 8 && !allAnswered() && n !== 9) {
+  if (currentSection === 9 && !allAnswered() && n !== 10) {
     // warn
   }
   document.getElementById('sec' + currentSection).classList.remove('active');
@@ -1461,7 +1523,7 @@ function goTo(n) {
   document.getElementById('sec' + n).classList.add('active');
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (n === 8) renderTest();
+  if (n === 9) renderTest();
 }
 
 function updateProgress() {
@@ -1483,7 +1545,7 @@ function startTraining() {
   userName = fio;
   userPost = document.getElementById('inputPost').value.trim();
   document.getElementById('userBadge').textContent = fio;
-  goTo(1);
+  goTo(2);
 }
 
 document.getElementById('inputFIO').addEventListener('keydown', function(e) {
@@ -1567,4 +1629,4 @@ function updateTestUI() {
 
 function finishTest() {
   buildResults();
-  goTo(9);
+  goTo(10);
