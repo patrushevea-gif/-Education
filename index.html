@@ -1632,3 +1632,54 @@ function updateTestUI() {
 function finishTest() {
   buildResults();
   goTo(10);
+}
+
+function buildResults() {
+  const pct = Math.round((score / questions.length) * 100);
+  let badgeClass = 'badge-retry';
+  let badgeText = 'Нужно повторить модуль';
+
+  if (pct >= 90) {
+    badgeClass = 'badge-gold';
+    badgeText = 'Отличный результат';
+  } else if (pct >= 75) {
+    badgeClass = 'badge-silver';
+    badgeText = 'Хороший результат';
+  } else if (pct >= 60) {
+    badgeClass = 'badge-bronze';
+    badgeText = 'Результат принят';
+  }
+
+  const wrong = questions.length - score;
+  const userTitle = userPost ? `${userName} · ${userPost}` : (userName || 'Участник');
+
+  document.getElementById('resultsContainer').innerHTML = `
+    <div class="result-hero">
+      <div class="result-score">${score}<span>/${questions.length}</span></div>
+      <div class="result-title">Итоговое тестирование завершено</div>
+      <div class="result-badge ${badgeClass}">${badgeText}</div>
+      <div style="color:var(--muted);">${userTitle}</div>
+    </div>
+
+    <div class="result-grid">
+      <div class="result-cell">
+        <div class="rc-val">${pct}%</div>
+        <div class="rc-label">Точность ответов</div>
+      </div>
+      <div class="result-cell">
+        <div class="rc-val">${wrong}</div>
+        <div class="rc-label">Ошибок</div>
+      </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:center;">
+      <button class="btn btn-outline" onclick="location.reload()">Пройти заново</button>
+      <button class="btn btn-gold" onclick="goTo(0)">На стартовую страницу</button>
+    </div>
+  `;
+}
+
+updateProgress();
+</script>
+</body>
+</html>
