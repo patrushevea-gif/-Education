@@ -427,6 +427,17 @@
         </div>
       </div>
 
+      <div class="module-item">
+        <div>
+          <div class="module-meta">Модуль 02 · Доступен</div>
+          <div class="module-title">Prompt Engineering Training</div>
+          <div class="module-desc">Новый учебный модуль по промпт-инжинирингу: структура запросов, практические шаблоны и закрепляющие упражнения.</div>
+        </div>
+        <div class="module-actions">
+          <button class="btn btn-gold" onclick="openPromptEngineeringModule()">Открыть модуль →</button>
+        </div>
+      </div>
+
       <div class="module-item" style="opacity:0.78;">
         <div>
           <div class="module-meta">Следующие модули</div>
@@ -1514,6 +1525,10 @@ function openSmartModule() {
   goTo(1);
   const fioInput = document.getElementById('inputFIO');
   if (fioInput) fioInput.focus();
+}
+
+function openPromptEngineeringModule() {
+  window.location.href = 'prompt_engineering_training.html';
 }
 
 function goTo(n) {
