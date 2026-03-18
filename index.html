@@ -382,6 +382,15 @@
   .module-desc { color: #C5D5E8; font-size: 0.92rem; line-height: 1.6; }
   .module-actions { min-width: 220px; text-align: right; }
   .module-actions .btn { white-space: nowrap; }
+  .module-inline-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--gold-light);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(201,168,76,0.5);
+  }
+  .module-inline-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
   .module-soon { color: var(--muted); font-size: 0.83rem; }
 
   /* ─── TAG ─── */
@@ -467,8 +476,10 @@
           <div class="module-meta">Модуль 05 · Доступен</div>
           <div class="module-title">AI Security Course</div>
           <div class="module-desc">Учебный модуль по безопасности AI: ключевые риски, защита данных, контроль доступа и практики безопасного внедрения.</div>
+          <a class="module-inline-link" href="ai_security_course.html" onclick="openAiSecurityModule(); return false;">Открыть модуль →</a>
         </div>
         <div class="module-actions">
+          <a class="btn btn-gold" href="ai_security_course.html" onclick="openAiSecurityModule(); return false;">Открыть модуль →</a>
         </div>
       </div>
 
@@ -1561,6 +1572,10 @@ function openAiDocumentsModule() {
 
 function openAiDataModule() {
   window.location.href = 'ai_data_course.html';
+}
+
+function openAiSecurityModule() {
+  window.location.href = 'ai_security_course.html';
 }
 
 function goTo(n) {
