@@ -380,6 +380,7 @@
   .module-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 8px; }
   .module-desc { color: #C5D5E8; font-size: 0.92rem; line-height: 1.6; }
   .module-actions { min-width: 220px; text-align: right; }
+  .module-actions .btn { white-space: nowrap; }
   .module-soon { color: var(--muted); font-size: 0.83rem; }
 
   /* ─── TAG ─── */
@@ -456,7 +457,18 @@
           <div class="module-desc">Учебный модуль по работе с данными в AI: подготовка данных, практики качества и прикладные кейсы внедрения.</div>
         </div>
         <div class="module-actions">
-          <button class="btn btn-gold" onclick="openAiDocumentsModule()">Открыть модуль →</button>
+          <button class="btn btn-gold" onclick="openAiDataModule()">Открыть модуль →</button>
+        </div>
+      </div>
+
+      <div class="module-item">
+        <div>
+          <div class="module-meta">Модуль 05 · Доступен</div>
+          <div class="module-title">AI Security Course</div>
+          <div class="module-desc">Учебный модуль по безопасности AI: ключевые риски, защита данных, контроль доступа и практики безопасного внедрения.</div>
+        </div>
+        <div class="module-actions">
+          <button class="btn btn-gold" onclick="openAiSecurityModule()">Открыть модуль →</button>
         </div>
       </div>
 
@@ -1545,6 +1557,14 @@ function openPromptEngineeringModule() {
 
 function openAiDocumentsModule() {
   window.location.href = 'ai_documents_course.html';
+}
+
+function openAiDataModule() {
+  window.location.href = 'ai_data_course.html';
+}
+
+function openAiSecurityModule() {
+  window.location.href = 'ai_security_course.html';
 }
 
 function goTo(n) {
